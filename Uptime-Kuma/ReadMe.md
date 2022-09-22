@@ -40,6 +40,12 @@ Required Tools:
 Node.js >= 14
 Git
 pm2 - For run in background
+
+# Install required packages
+
+sudo apt install npm git -y
+
+
 # Update your npm to the latest version
 npm install npm -g
 
