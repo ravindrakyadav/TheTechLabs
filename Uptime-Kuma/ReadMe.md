@@ -44,17 +44,20 @@ pm2 - For run in background
 npm install npm -g
 
 git clone https://github.com/louislam/uptime-kuma.git
+
 cd uptime-kuma
+
 npm run setup
 
-# Option 1. Try it
+## Option 1. Try it
 node server/server.js
 
-# Option 2. (Recommended)  Run in background using PM2
-# Install PM2 if you don't have it: 
+## Option 2. (Recommended)  Run in background using PM2
+
+### Install PM2 if you don't have it: 
 npm install pm2 -g && pm2 install pm2-logrotate
 
-# Start Server
+### Start Server
 pm2 start server/server.js --name uptime-kuma
 
 Browse to http://localhost:3001 after starting.
