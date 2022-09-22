@@ -53,7 +53,7 @@ npm run setup
 node server/server.js
 
 ### Option 2.  (Recommended) Run in background using PM2
-Install PM2 if you don't have it: 
+Install PM2 if you don't have it    
 npm install pm2 -g && pm2 install pm2-logrotate
 
 
