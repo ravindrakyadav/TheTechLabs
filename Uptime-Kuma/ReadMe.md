@@ -63,7 +63,8 @@ pm2 start server/server.js --name uptime-kuma
 Browse to http://localhost:3001 after starting.
 
 
-More useful PM2 Commands
+
+# More useful PM2 Commands
 
 ### If you want to see the current console output
 pm2 monit
