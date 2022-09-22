@@ -52,18 +52,19 @@ npm run setup
 ### Option 1. Try it
 node server/server.js
 
-(Recommended) Option 2. Run in background using PM2
-##### Install PM2 if you don't have it: 
+### (Recommended) Option 2. Run in background using PM2
+-  Install PM2 if you don't have it: 
 npm install pm2 -g && pm2 install pm2-logrotate
 
 
 ### Start Server
- pm2 start server/server.js --name uptime-kuma
+pm2 start server/server.js --name uptime-kuma
 
 Browse to [http://localhost:3001](http://localhost:3001/) after starting.
 
-More useful PM2 Commands
 
+
+More useful PM2 Commands
 
 ### If you want to see the current console output
 pm2 monit
