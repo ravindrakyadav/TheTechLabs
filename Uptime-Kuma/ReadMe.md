@@ -69,8 +69,15 @@ pm2 start server/server.js --name uptime-kuma
 Browse to http://localhost:3001 after starting.
 
 
+## Listen to different port or hostname
+pm2 start server/server.js --name uptime-kuma -- --port=80 --host=0.0.0.0
 
-# More useful PM2 Commands
+
+## More useful PM2 Commands
+
+pm2 start uptime-kuma
+pm2 stop uptime-kuma
+pm2 restart uptime-kuma
 
 ### If you want to see the current console output
 pm2 monit
@@ -78,4 +85,5 @@ pm2 monit
 
 ### If you want to add it to startup
 pm2 save && pm2 startup
+
 
