@@ -18,8 +18,10 @@ Features:
 - Proxy Support
 - 2FA available
 
+
 ## 🔧 How to Install
 https://github.com/louislam/uptime-kuma/wiki/%F0%9F%94%A7-How-to-Install
+
 
 ### 🐳 Docker
 
@@ -30,12 +32,14 @@ docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name upti
 Browse to [http://localhost:3001](http://localhost:3001/) after starting.
 
 
+
 ### 💪🏻 Non-Docker
 
 Required Tools:
 -   [Node.js](https://nodejs.org/en/download/) >= 14
 -   [Git](https://git-scm.com/downloads)
 -   [pm2](https://pm2.keymetrics.io/) - For run in background
+
 
 ### Update your npm to the latest version
 npm install npm -g
@@ -44,12 +48,14 @@ git clone https://github.com/louislam/uptime-kuma.git
 cd uptime-kuma
 npm run setup
 
+
 ### Option 1. Try it
 node server/server.js
 
 (Recommended) Option 2. Run in background using PM2
 ##### Install PM2 if you don't have it: 
 npm install pm2 -g && pm2 install pm2-logrotate
+
 
 ### Start Server
  pm2 start server/server.js --name uptime-kuma
@@ -58,8 +64,10 @@ Browse to [http://localhost:3001](http://localhost:3001/) after starting.
 
 More useful PM2 Commands
 
+
 ### If you want to see the current console output
 pm2 monit
+
 
 ### If you want to add it to startup
 pm2 save && pm2 startup
