@@ -35,7 +35,14 @@ Browse to [http://localhost:3001](http://localhost:3001/) after starting.
 
 ### 💪🏻 Non-Docker
 
-Required Tools:
+A fresh install of linux OS. Eg. Ubuntu.
+
+## update and upgrade repository and packages
+
+sudo apt update && sudo apt upgrade -y
+
+
+Required Tools to run Uptime-Kuma:
 
 Node.js >= 14
 Git
