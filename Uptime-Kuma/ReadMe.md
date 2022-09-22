@@ -43,6 +43,7 @@ sudo apt update && sudo apt upgrade -y
 
 
 
+
 ### Required Tools to run Uptime-Kuma:
 
 
