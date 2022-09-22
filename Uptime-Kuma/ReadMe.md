@@ -42,11 +42,17 @@ A fresh install of linux OS. Eg. Ubuntu.
 sudo apt update && sudo apt upgrade -y
 
 
+
 ### Required Tools to run Uptime-Kuma:
 
+
 Node.js >= 14
+
 Git
+
 pm2 - For run in background
+
+
 
 ### Install required packages
 
@@ -62,8 +68,10 @@ cd uptime-kuma
 
 npm run setup
 
+
 ### Option 1. Try it
 node server/server.js
+
 
 ### Option 2. (Recommended)  Run in background using PM2
 
