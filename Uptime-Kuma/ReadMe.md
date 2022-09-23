@@ -88,9 +88,13 @@ cd uptime-kuma
 sudo npm run setup                   
       (if an error appears that higher version of nodejs is required then follow as below else skip and move to step through option 2 below)
                 (To update nodejs to 18.x run the following commands)
+                
                   sudo apt update
+                  
                   curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
+                  
                   sudo apt install -y nodejs
+                  
                   node -v
 
 
