@@ -100,6 +100,8 @@ pm2 - For run in background
                   sudo apt install -y nodejs
                   
                   node -v
+                  
+                  sudo npm run setup
 
 
 
