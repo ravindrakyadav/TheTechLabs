@@ -28,7 +28,7 @@ https://github.com/louislam/uptime-kuma/wiki/%F0%9F%94%A7-How-to-Install
 ------------------------
 [Ubuntu/CentOS] Interactive CLI installer, supports Docker or without Docker.
 
-curl -o kuma_install.sh http://git.kuma.pet/install.sh && sudo bash kuma_install.sh
+    curl -o kuma_install.sh http://git.kuma.pet/install.sh && sudo bash kuma_install.sh
 
 
 # Advanced Installation
@@ -37,12 +37,14 @@ curl -o kuma_install.sh http://git.kuma.pet/install.sh && sudo bash kuma_install
 
 ### Create a volume (only when this is your first docker image/ container)
 ---------------------------------------------------------------------------
-docker volume create uptime-kuma
+
+    docker volume create uptime-kuma
 
 
 ### Start the container
 -----------------------
-docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:1 
+
+    docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:1 
 
 ⚠️ Please use a **local volume** only. Other types such as NFS are not supported.
 
@@ -57,8 +59,8 @@ A fresh install of linux OS on system or in Virtual environment. (Eg. Debian, Ub
 
 ### After fresh install, update and upgrade repository and packages
 -----------------------------------------------------------------------
-sudo apt update && sudo apt upgrade -y
-
+     
+    sudo apt update && sudo apt upgrade -y
 
 
 ### Following tools are required to run Uptime-Kuma:
@@ -74,19 +76,21 @@ pm2 - For run in background
 
 ### Installation of required packages
 -------------------------------------
-sudo apt install npm git sudo nano curl -y
+
+    sudo apt install npm git sudo nano curl -y
 
 
 ### Update your npm to the latest version
 -----------------------------------------
-sudo npm install npm -g
 
-git clone https://github.com/louislam/uptime-kuma.git
+    sudo npm install npm -g
 
-cd uptime-kuma
+    git clone https://github.com/louislam/uptime-kuma.git
 
-sudo npm run setup                   
-      (if an error appears that higher version of nodejs is required then follow as below else skip and move to step through option 2 below)
+    cd uptime-kuma
+
+    sudo npm run setup                   
+   (if an error appears that higher version of nodejs is required then follow as below else skip and move to step through option 2 below)
                 (To update nodejs to 18.x run the following commands)
                 
                   sudo apt update
@@ -101,7 +105,8 @@ sudo npm run setup
 
 ### Option 1. to try 
 --------------------
-node server/server.js
+
+    node server/server.js
 
 
 ### Option 2. (Recommended)  Run in background using PM2
@@ -109,11 +114,13 @@ node server/server.js
 
 #### Install PM2 if you don't have it: 
 
-sudo npm install pm2 -g  && sudo pm2 install pm2-logrotate
+
+    sudo npm install pm2 -g  && sudo pm2 install pm2-logrotate
 
 #### Start Server
 
-pm2 start server/server.js --name uptime-kuma
+
+    pm2 start server/server.js --name uptime-kuma
 
 Browse to http://localhost:3001 after starting.
 
@@ -135,22 +142,26 @@ Browse to http://localhost:3001 after starting.
 
 ### Listen to different port or hostname (optional)
 ---------------------------------------------------
-pm2 start server/server.js --name uptime-kuma -- --port=80 --host=0.0.0.0
+
+    pm2 start server/server.js --name uptime-kuma -- --port=80 --host=0.0.0.0
 
 
 ### More useful PM2 Commands
 
-pm2 start uptime-kuma
 
-pm2 stop uptime-kuma
+    pm2 start uptime-kuma
 
-pm2 restart uptime-kuma
+    pm2 stop uptime-kuma
+
+    pm2 restart uptime-kuma
 
 ### If you want to see the current console output
-pm2 monit
+
+    pm2 monit
 
 
 ### If you want to add it to startup
-pm2 save && pm2 startup
+
+    pm2 save && pm2 startup
 
 
