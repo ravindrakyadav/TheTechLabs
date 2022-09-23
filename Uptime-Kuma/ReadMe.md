@@ -90,7 +90,15 @@ pm2 - For run in background
     cd uptime-kuma
 
     sudo npm run setup                   
-   (if an error appears that higher version of nodejs is required then follow as below else skip and move to step through option 2 below)
+   (if an error appears like :
+   
+   ERROR: npm is known not to run on Node.js v10.24.0
+   
+   You'll need to upgrade to a newer Node.js version in order to use this
+   
+   version of npm. You can find the latest version at https://nodejs.org/)
+   
+  Then follow steps as under else skip and move to step through option 2 below)
                 (To update nodejs to 18.x run the following commands)
                 
                   sudo apt update
