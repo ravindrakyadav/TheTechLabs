@@ -74,7 +74,7 @@ pm2 - For run in background
 
 ### Installation of required packages
 -------------------------------------
-sudo apt install npm git sudo nano  -y
+sudo apt install npm git sudo nano curl -y
 
 
 ### Update your npm to the latest version
