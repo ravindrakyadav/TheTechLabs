@@ -85,7 +85,14 @@ git clone https://github.com/louislam/uptime-kuma.git
 
 cd uptime-kuma
 
-sudo npm run setup
+sudo npm run setup                   
+      (if an error appears that higher version of nodejs is required then follow as below else skip and move to step through option 2 below)
+                (To update nodejs to 18.x run the following commands)
+                  sudo apt update
+                  curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
+                  sudo apt install -y nodejs
+                  node -v
+
 
 
 ### Option 1. to try 
@@ -97,11 +104,11 @@ node server/server.js
 --------------------------------------------------------
 
 #### Install PM2 if you don't have it: 
---------------------------------------
+
 sudo npm install pm2 -g  && sudo pm2 install pm2-logrotate
 
 #### Start Server
------------------
+
 pm2 start server/server.js --name uptime-kuma
 
 Browse to http://localhost:3001 after starting.
