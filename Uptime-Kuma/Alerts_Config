@@ -1,18 +1,32 @@
-# How to Monitor Docker Containers     
+# How to Monitor Docker Containers via uptime kuma     
 (https://github.com/louislam/uptime-kuma/wiki/How-to-Monitor-Docker-Containers)
 
-If you are running Uptime Kuma Docker
-By default, a docker container is self-contained, which means Uptime Kuma cannot access your host. You need to bind the /var/run/docker.sock to your container.
 
-(Method 1) Share docker.sock with Uptime Kuma Container
+Follow the steps to configure Alert config for Docker Containers -
+...................................................................
+It is configured in 2 steps.
+Step-1: 
+Go to docker and open uptime kuma server running in docker container and follow the steps:
+Note: Initially it supports only to "Uptime Kuma" running under docker enviroment
+1. goto portainer
+2. open uptime kuma container in docker server
+3. Click on "Duplicate/Edit" under "Actions"
+4. goto advanced container settings - Select "Volumes" Tab
+5. Click on "+map additional volume" to add new volume mapping 
+6. At the bottom in container field type -   /var/run/docker.sock           & click on "bind"
+7. At the bottom in host field type - /var/run/docker.sock 
+8. finally click on "Deploy the Container" and wait till container is re-installed and restarted. A success message will flash.
 
-Command argument:
-    -v /var/run/docker.sock:/var/run/docker.sock
-
-
-docker-compose:
-volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
-   
-(Method 2) TCP - Bridge Mode
-Coming Soon
+Step-2: 
+Open & login uptime kuma web interface and we have to setup docker host into it before monitoring is setup: 
+1. Goto "settings" on UptimeKuma dashboard
+2. Click on "Docker Host" - "Setup Docker Host"
+3. In "Setup Docker Host" Screen - 
+	Type the Friendly name - mydockerost
+	click on "test" then a "Connected susseccufy"  message will flash
+4. now goto "Add new monitor" on UptimeKuma dashboard
+5. In General - Select Monitor type as: "Docker Container"
+6. Give "Friendly Name" 
+7. Give "Container Name / ID", i suggest to give Container ID.
+8. Select "Docker Host" from drop down menu, the server created in step 3
+9. Save  - This will create docker container monitor and a green screen with success message will flash.
