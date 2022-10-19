@@ -1,32 +1,74 @@
-# How to Monitor Docker Containers via uptime kuma     
-(https://github.com/louislam/uptime-kuma/wiki/How-to-Monitor-Docker-Containers)
+Uptime Kuma Alerts Configuration on Discord & Telegram & monitoring of Docker containers in Uptime Kuma
+--------------------------------------------------------------------------------------------------------
+
+Alert to Discord Server:
+.........................
+1. Install discord
+2. Create a new server in discord
+3. Create a new channel in the above created server
+4. goto "Server Setting" in discord "server" that u created in step 2
+5. In server setting screen, goto "Integration"
+6. on right side , click on "Create Webhook"
+7. Specify the name then select channel (created in step 3) 
+8. below click on "Copy Webhook URL" 
+9. Now login into uptime kuma web interface
+10. goto Settings
+11. Select Notification - Setup Notification
+12. Under "notification type" select "Discord"
+13. Type "Friendly name" 
+14. Now paste, Webhook created n copied in step 8
+15. default enabled - ON
+16. Apply on all existing monitor - ON
+17. Click on "Test" to see if it communicates with discord server
+18. finally click on "Save" 
 
 
-Follow the steps to configure Alert config for Docker Containers -
-...................................................................
+Alert Config for Telegram
+...........................
+1. Install and login Telegram
+2. search for "BotFather" in telegram
+3. inside botfather choose a name for you bot chat type:   /newbot
+4. Now give a name to the new bot you want to create, example like: The Tech Labs Notifier
+5. Next choose a username for your bot & make sure it ends with 'bot', eg: TheTechLabsNotifiers_bot
+6. now congrats message will come with bot name and an access token, copy that access token and click on your custom bot name and start the chat session and type "hi: at that custombot chat session, this will enable your custombot session.
+7. now create a new group and add that custom bot as member inside this group.
+8. Now open uptime kuma dashboard and goto settings - setup notification - 
+9. Select notification type as Telegram, give friendly name and paste token copied in the step 6 to Bot Token,
+10. now click on the url just below Chat ID field, the page will open in browser and displays "OK" message. 
+11. Now type any message in the group created in step 7 and again refresh the web page opened in step 10 to view the Chat ID.
+12. copy that chat ID and paste this into the chat ID field in step 9.
+13. now click on test, you will see the test message at telegram in custome bot chat created in step 5.
+14. now test the notification by simulation status failure in uptime kuma dashboard.
+
+
+Alert config for Docker Containers -
+....................................
 It is configured in 2 steps.
 Step-1: 
-Go to docker and open uptime kuma server running in docker container and follow the steps:
+In uptime kuma server running in docker container do the following steps:
 Note: Initially it supports only to "Uptime Kuma" running under docker enviroment
 1. goto portainer
-2. open uptime kuma container in docker server
+2. open uptime kuma container in docker
 3. Click on "Duplicate/Edit" under "Actions"
 4. goto advanced container settings - Select "Volumes" Tab
 5. Click on "+map additional volume" to add new volume mapping 
-6. At the bottom in container field type -   /var/run/docker.sock           & click on "bind"
+6. At the bottom in container field type -   /var/run/docker.sock & click on "bind"
 7. At the bottom in host field type - /var/run/docker.sock 
-8. finally click on "Deploy the Container" and wait till container is re-installed and restarted. A success message will flash.
+8. finally click on "Deploy the Container" and wait till container is re-installed and restarted
 
 Step-2: 
-Open & login uptime kuma web interface and we have to setup docker host into it before monitoring is setup: 
-1. Goto "settings" on UptimeKuma dashboard
+Open & login uptime kuma web interface and we'll setup docker host into it before monitoring: 
+1. Goto "settings"
 2. Click on "Docker Host" - "Setup Docker Host"
 3. In "Setup Docker Host" Screen - 
-	Type the Friendly name - mydockerost
+	Type the Friendly name - my name
 	click on "test" then a "Connected susseccufy"  message will flash
-4. now goto "Add new monitor" on UptimeKuma dashboard
+4. now goto "Add new monitor"
 5. In General - Select Monitor type as: "Docker Container"
 6. Give "Friendly Name" 
 7. Give "Container Name / ID", i suggest to give Container ID.
 8. Select "Docker Host" from drop down menu, the server created in step 3
-9. Save  - This will create docker container monitor and a green screen with success message will flash.
+9. Save  - This will create docker container monitor and a green screen with success message will    flash.
+
+Done !!!
+
