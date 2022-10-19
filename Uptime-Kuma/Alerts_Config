@@ -2,7 +2,7 @@ Uptime Kuma Alerts Configuration on Discord & Telegram & monitoring of Docker co
 --------------------------------------------------------------------------------------------------------
 
 # Alert to Discord Server:
-.........................
+..........................
 1. Install discord
 2. Create a new server in discord
 3. Create a new channel in the above created server
