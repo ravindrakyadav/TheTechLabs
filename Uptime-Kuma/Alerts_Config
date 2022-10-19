@@ -1,7 +1,7 @@
 Uptime Kuma Alerts Configuration on Discord & Telegram & monitoring of Docker containers in Uptime Kuma
 --------------------------------------------------------------------------------------------------------
 
-Alert to Discord Server:
+# Alert to Discord Server:
 .........................
 1. Install discord
 2. Create a new server in discord
@@ -23,7 +23,7 @@ Alert to Discord Server:
 18. finally click on "Save" 
 
 
-Alert Config for Telegram
+# Alert Config for Telegram
 ...........................
 1. Install and login Telegram
 2. search for "BotFather" in telegram
@@ -41,7 +41,7 @@ Alert Config for Telegram
 14. now test the notification by simulation status failure in uptime kuma dashboard.
 
 
-Alert config for Docker Containers -
+# Alert config for Docker Containers -
 ....................................
 It is configured in 2 steps.
 Step-1: 
